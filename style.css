@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    justify-content: center;
+    background-color: #0D0D0D;
+    min-height: 100vh;
+    min-height: 100vh;
+    width: 1440px;
+    display: flex;
+
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    
+}
+
+.head_box {
+    position: relative;
+    margin: 100px auto 20px;
+    width: 100%;
+    max-width: 840px;
+}
+
+#logo {
+    height: 48px;
+    width: 126px;
+    Top: 72px;
+    Left: 657px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+}
+
+#inputBx {
+    width: 644px;
+    height: 54px;
+    margin-bottom: 80px;
+    Top: 173px;
+    Left: 352px;
+    Gap: 8px;
+    size: 16px;
+    border: #0D0D0D;
+    background-color: #262626;
+    color: #808080;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+
+}
+
+#add_btn {
+
+    justify-content: center;
+    align-items: center;
+    Padding: 16px;
+    Gap: 8px;
+    display: flex;
+    cursor: pointer;
+}
+
+#list_priority {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 16.94px;
+    margin-bottom: 20px;
+}
+
+#list_priority>.list_count {
+    Width: 66px;
+    Height: 17px;
+    color: #4EA8DE;
+
+}
+
+#list_priority>.priority_count {
+    color: #8284FA;
+    width: 86px;
+    height: 17px;
+
+}
+
+#list-container ul {
+    position: relative;
+    text-align: left;
+  color: #f2f2f2;
+    background-color: #262626;
+   
+    
+}
+
+#list-container ul i {
+    list-style: none;
+    font-size: 14px;  
+    width: 632px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    padding: 16px;
+    position: absolute;
+
+}
+
+/*ul li::after {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    line-height: 19.6px;
+    border: 5px;
+    background-image: url(/roundcheck.png);
+    background-size: cover;
+    background-position: center;
+    font-family: Inter;
+    top: 12px;
+    left: -20px;
+
+}
+
+/*ul li.checked {
+    color: #808080;
+    text-decoration-line: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(/checkcircle.png);
+}
+
+/*ul li::after {
+    background-image: url(/delete.png);
+}*/

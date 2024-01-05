@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+      <div class="container">
+        <div class="head_box">
+            <img src="./todo_Logo.png" id="logo">
+            <input type="text" placeholder="    Enter Your To-do List Task" id="inputBx">
+            <img src="./addButton.png" onclick="addTask()" id="add_btn">
+
+            <div id="list_priority">
+                <p class="list_count"><b>To-do list</b></p>
+                <span class="priority_count"><b>High Priority</b></span>
+            </div>
+
+            <ul id="list-container">
+               
+            <!--  <li class="checked">Pay bills</li>
+                <li>Meet George</li>
+                <li>Buy eggs</li> -->
+               
+            </ul>
+
+            <div id="list_priority">
+                <p class="list_count"><b>Started</b></p>
+                <span class="priority_count"><b>High Priority</b></span>
+            </div>
+
+            <div id="list_priority">
+                <p class="list_count"><b>Completed</b></p>
+                <span class="priority_count"><b>High Priority</b></span>
+            </div>
+
+        </div>
+    </div> 
+
+   <!-- <div class="container">
+        <div class="add-to-do">
+            <img src="./todo_Logo.png" id="logo">
+            <input type="text" placeholder="    Enter Your To-do List Task" id="input">
+            <img src="./addButton.png" onclick="addToDo()" id="add_btn">
+        </div>
+
+        <div class="content">
+
+            <div id="list_priority">
+                <p class="list_count"><b>To-do list</b></p>
+                <span class="priority_count"><b>High Priority</b></span>
+            </div>
+
+            <ul id="list">
+               
+                <li class="item">
+                  <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                    <p class="text">Drink Coffee</p>
+                    <i class="fa fa-trash-o de" job="delete" id="0"></i>   
+                </li>
+            </ul>
+        </div>
+    </div>-->
+
+
+
+
+    <script>
+
+         let inputBox = document.getElementById("inputBx");
+         let listContainer = document.getElementById("list-container");
+ 
+ 
+        /* listContainer.addEventListener("click", function(e) {
+             if (e.target.tagName === "LI") {
+                 e.target.classList.toggle("checked");
+             }
+             else if (e.target.tagName === "SPAN") {
+                 e.target.parentElement.remove();
+             }
+         }, false);*/
+ 
+ 
+         function addTask() {
+             if (inputBox.value === '') {
+                 alert("You must write something!");
+             }
+             else {
+                 let list = document.createElement("li");
+                 list.innerHTML = `${inputBox.value} <i class="fa-regular fa-trash"></i>`;
+                 listContainer.appendChild(list);
+            
+                 inputBox.value ="";
+                 list.querySelector("i").addEventListener("click",remove);
+                 function remove(){
+                     list.remove()
+                 }
+             }
+            
+         }
+
+       /* const clear = document.querySelector(".clear");
+        const list = document.getElementById("list");
+        const input = document.getElementById("input");
+
+        const CHECK = "fa-check-circle";
+        const UNCHECK = "fa-circle-thin";
+        const LINE_THROUGH = "lineThrough";
+
+        let LIST, id;
+
+        let data = localStorage.getItem("TODO");
+
+        if (data) {
+            LIST = JSON.parse(data);
+            id = LIST.length;
+            loadList(LIST);
+        }
+        else {
+            LIST = [];
+            id = 0;
+        }
+
+        function loadList(array) {
+            array.forEach(function(item) {
+                addToDo(item.name, item.id, item.done, item.trash);
+            });
+        }
+
+        clear.addEventListener("click", function () {
+            localStorage.clear();
+            location.reload();
+        });
+
+
+        function addToDo(toDo, id, done, trash) {
+            if (trash) { return; }
+            const DONE = done ? CHECK : UNCHECK;
+            const LINE = done ? LINE_THROUGH : "";
+
+        }
+
+        function addToDo(toDo) {
+
+            const item = `<li class="item"> 
+                <i class="fa ${DONE} co" job="complete" id="${id}"></i>
+                    <p class="text ${LINE}">${toDo}</p>
+                    <i class="fa fa-trash-o de" job="delete" id="${id}"></i>  
+                </li>      
+                `;
+
+            const position = "beforeend";
+            list.insertAdjacentHTML(position, item);
+        }
+
+        document.addEventListener("keyup", function (even) {
+            if (event.keyCode == 13) {
+                const toDo = input.value;
+
+                if (toDo) {
+                    addToDo(toDo, id, false, false);
+
+                    LIST.push({
+                        name: toDo,
+                        id: id,
+                        done: false,
+                        trash: false,
+                    });
+                    localStorage.setItem("ToDo",JSON.stringify(LIST));
+                    id++;
+                }
+                input.value = "";
+            }
+        });
+
+
+        function completeToDo(element){
+            element.classList.toggle(CHECK);
+            element.classList.toggle(UNCHECK);
+            element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+
+            LIST[element.id].done = LIST[element.id].done ? false : true;
+        }
+
+        function removeToDo(element){
+            element.parentNode.parentNode.removeChild(element.parentNode);
+            LIST[element.id].trash=true;
+
+        }
+
+        list.addEventListener("click",function(event){
+            const element=event.target;
+            const elementJob=element.attributes.job.value;
+
+            if(elementJob=="complete"){
+                completeToDo(element);
+            }else if(elementJob == "delete"){
+                removeToDo(element);
+            }
+            localStorage.setItem("TODo",JSON.stringify(LIST));
+        });*/
+
+    </script>
+</body>
+
+
+
+</html>
